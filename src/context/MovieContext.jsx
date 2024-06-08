@@ -42,7 +42,7 @@ export const AppProvider = ({ children }) => {
                 }
             
             
-            console.log(movies)
+            console.log(data)
             setMovies(data.Search)
         }
         catch (error) {

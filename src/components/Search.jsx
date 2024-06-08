@@ -12,7 +12,7 @@ const Search = () => {
       onChange={(e)=>setSearch(e.target.value)}
       />
       {/* error handle message */}
-      <span>{error.state & error.msg}</span>
+      <span>{error.state && error.msg}</span>
     </div>
   )
 }
