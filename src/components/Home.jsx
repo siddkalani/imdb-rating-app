@@ -3,7 +3,7 @@ import MovieContext from '../context/MovieContext'
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-  const { movies, isloading, setSearch } = useContext(MovieContext);
+  const { movies, isloading } = useContext(MovieContext);
   console.log(movies)
 
   // loading-state

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import { Children, createContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { API_URL } from '../context/MovieContext';
 import { IoIosArrowBack } from "react-icons/io";
 import save from "./save.svg"
@@ -44,7 +44,7 @@ const SingleMovie = () => {
   }
 
   useEffect(() => {
-    const real = setTimeout(() => {
+    setTimeout(() => {
       getMovies(`${API_URL}&i=${id}`);
     }, 1000);
   }, [])

@@ -1,5 +1,5 @@
 import React from "react";
-import { Children, createContext, useEffect, useState } from "react";
+import {createContext, useEffect, useState } from "react";
 export const API_URL = `http://www.omdbapi.com/?&apikey=b266755e`
 
 //context
@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
     const [isloading , setIsloading] = useState(false)
 
     const getMovies = async (url) => {
-        // setIsloading(true)
+
         // fetching api
         try {
             const res = await fetch(url);

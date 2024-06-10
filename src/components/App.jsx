@@ -3,7 +3,6 @@ import "../index.css"
 import Movie from './Movie';
 import SingleMovie from './SingleMovie';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Search from './Search';
 
 const App = () => {
     return (
