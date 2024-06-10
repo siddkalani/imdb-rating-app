@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import MovieContext from '../context/MovieContext'
+import { useGlobalFunction } from '../context/MovieContext'
 
 const Search = () => {
 
-  const { setSearch, search, error, setIsloading } = useContext(MovieContext)
+  const { setSearch, search, error, setIsloading } = useGlobalFunction()
 
   const handleChange = (e) => {
 

@@ -1,9 +1,11 @@
 import React from "react";
-import {createContext, useEffect, useState } from "react";
+import {createContext, useEffect, useState , useContext} from "react";
+
 export const API_URL = `http://www.omdbapi.com/?&apikey=b266755e`
 
+
 //context
-export const MovieContext = createContext({})
+ const MovieContext = createContext({})
 //provider
 export const AppProvider = ({ children }) => {
 
@@ -43,10 +45,9 @@ export const AppProvider = ({ children }) => {
                     })
                 }
                 }
-                console.log(error)
+
             
-            
-            console.log(data)
+        
             
         }
         catch (error) {
@@ -58,12 +59,14 @@ export const AppProvider = ({ children }) => {
         const real = setTimeout(() => {
             getMovies(`${API_URL}&s=${search}`);
         }, 500);
-        return ()=>clearTimeout(real)
+        return ()=>clearTimeout(real);
     },[search])
 
     return <MovieContext.Provider value={{ movies, search, setSearch ,error,setError,isloading,setIsloading}}>{children}</MovieContext.Provider>
 }
-
+    const useGlobalFunction=()=>{
+        return (useContext(MovieContext))
+}
 
 //consumer
-export default MovieContext
+export {MovieContext , useGlobalFunction}

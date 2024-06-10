@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import MovieContext from '../context/MovieContext'
+import { useGlobalFunction } from '../context/MovieContext';
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-  const { movies, isloading } = useContext(MovieContext);
+  const { movies, isloading } = useGlobalFunction()
   console.log(movies)
 
   // loading-state

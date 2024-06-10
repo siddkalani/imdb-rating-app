@@ -9,6 +9,7 @@ import { SlCalender } from "react-icons/sl";
 import { MdAccessTime } from "react-icons/md";
 import { BsTicketPerforated } from "react-icons/bs";
 
+
 const SingleMovie = () => {
 
   const { id } = useParams();
@@ -20,8 +21,6 @@ const SingleMovie = () => {
   const handleChange = (change) =>{
     setIsActive(change)
   }
-
-
 
   const getMovies = async (url) => {
     setIsloading(true)
