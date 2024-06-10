@@ -8,7 +8,7 @@ export const MovieContext = createContext({})
 export const AppProvider = ({ children }) => {
 
     const [movies, setMovies] = useState([])
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState("titanic")
     const [error , setError] = useState({
         show:false,
         msg:""

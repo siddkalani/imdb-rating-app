@@ -5,9 +5,11 @@ import Home from './Home'
 
 const Movie = () => {
   return (
-    <div>
+    <div className='flex items-center justify-center bg-[#242A32]'>
+      <div className='h-screen w-[90%] overflow-auto mt-3 flex flex-col gap-5 scroll-m-0 scroll-smooth '>
         <Search />
-        <Home />      
+        <Home />
+      </div>
     </div>
   )
 }
