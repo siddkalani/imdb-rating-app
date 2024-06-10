@@ -58,7 +58,7 @@ const SingleMovie = () => {
   }
   return (
     <div className='flex w-screen h-screen bg-[#242A32]'>
-      <section className='w-full h-full flex justify-center'>
+      <section className='w-full h-full flex justify-center overflow-auto'>
         <div className='text-white mt-3 w-full flex flex-col gap-5 items-center'>
           {/* header */}
           <div className='w-[90%] flex justify-between items-center'>
@@ -74,7 +74,7 @@ const SingleMovie = () => {
           {/* title */}
           <div className='w-[90%] flex flex-col'>
             <p className='text-center text-[1.5rem] font-semibold'>{single.Title}</p>
-            <div className='flex items-center justify-center text-[#92929D]'>
+            <div className='flex items-center justify-center text-[#92929D] text-[1rem]'>
               <span className='flex items-center gap-x-1'><SlCalender /> {single.Year}</span> <hr className='rotate-90 w-[5%] border-[#92929D]' />
               <span className='flex items-center gap-x-1'><MdAccessTime /> {single.Runtime}</span> <hr className='rotate-90 w-[5%] border-[#92929D]' />
               <span className='flex items-center gap-x-1'><BsTicketPerforated />{genre}</span>
