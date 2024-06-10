@@ -1,7 +1,7 @@
 import React from "react";
 import {createContext, useEffect, useState , useContext} from "react";
 
-export const API_URL = `http://www.omdbapi.com/?&apikey=b266755e`
+export const API_URL = `https://www.omdbapi.com/?&apikey=b266755e`
 
 
 //context
