@@ -61,7 +61,7 @@ export const AppProvider = ({ children }) => {
         return ()=>clearInterval(real)
     },[search])
 
-    return <MovieContext.Provider value={{ movies, search, setSearch ,error,setError,isloading,setIsloading}}>{children}</MovieContext.Provider>
+    return <MovieContext.Provider value={{ movies, getMovies, search, setSearch ,error,setError,isloading,setIsloading}}>{children}</MovieContext.Provider>
 }
 
 
