@@ -47,7 +47,7 @@ const SingleMovie = () => {
     setTimeout(() => {
       getMovies(`${API_URL}&i=${id}`);
     }, 1000);
-  }, [])
+  }, [id])
   console.log(single)
   const genre = single.Genre
   if (isloading) {

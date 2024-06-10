@@ -59,7 +59,7 @@ export const AppProvider = ({ children }) => {
             getMovies(`${API_URL}&s=${search}`);
         }, 500);
         return ()=>clearInterval(real)
-    }, [search])
+    },[search])
 
     return <MovieContext.Provider value={{ movies, search, setSearch ,error,setError,isloading,setIsloading}}>{children}</MovieContext.Provider>
 }
