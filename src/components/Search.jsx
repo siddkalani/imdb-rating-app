@@ -3,16 +3,25 @@ import MovieContext from '../context/MovieContext'
 
 const Search = () => {
 
-  const {setSearch , search , error } = useContext(MovieContext)
+  const {setSearch , search , error,setIsloading } = useContext(MovieContext)
+
+  const handleChange =(e)=>{
+
+      setSearch(e.target.value)
+      setIsloading(true)
+
+  }
+
   return (
     <div>
       {/* search-bar */}
       <input type="text"
       value={search}
-      onChange={(e)=>setSearch(e.target.value)}
+      onChange={handleChange}
       />
       {/* error handle message */}
-      <span>{error.state && error.msg}</span>
+      <p> {error.show && error.msg} </p>
+     
     </div>
   )
 }

@@ -10,12 +10,13 @@ export const AppProvider = ({ children }) => {
     const [movies, setMovies] = useState([])
     const [search, setSearch] = useState("")
     const [error , setError] = useState({
-        state:false,
+        show:false,
         msg:""
     })
     const [isloading , setIsloading] = useState(false)
 
     const getMovies = async (url) => {
+        // setIsloading(true)
         // fetching api
         try {
             const res = await fetch(url);
@@ -23,27 +24,30 @@ export const AppProvider = ({ children }) => {
 
             if (data.Response === "True") {
                 setError({
-                    state:false,
+                    show:false,
                     msg:""
                 })
                 setIsloading(false)
+                setMovies(data.Search)
             } else if(data.Response === "False"){
+                setIsloading(false)
                 if(data.Error === "Incorrect IMDb ID."){
+                   setError({ 
+                    show:true,
+                    msg:""})
+                    setSearch("")
+                } else{
                     setError({
-                        state:true,
-                        msg:""
-                    })
-                } 
-                } else {
-                    setError({
-                        state:true,
+                        show:true,
                         msg:data.Error
                     })
                 }
+                }
+                console.log(error)
             
             
             console.log(data)
-            setMovies(data.Search)
+            
         }
         catch (error) {
             console.log(error)
